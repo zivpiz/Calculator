@@ -52,8 +52,10 @@ button{
     color: white;
     display: inline-block;
     width: 100%;
-    margin: 0px;
+    height: 1.5em;
+    margin: 0;
     padding:0 1em;
+    float: right;
 }
 
 #calc-buttons{
@@ -61,7 +63,7 @@ button{
 }
 
 #actios {
-    margin: 0px;
+    margin: 0;
 }
 
 #actions button {

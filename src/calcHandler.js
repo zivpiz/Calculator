@@ -13,6 +13,9 @@ const opToFunc = {
     }
 };
 
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+};
 
 export default class CalcHandler {
     constructor() {
@@ -26,6 +29,12 @@ export default class CalcHandler {
 
     //Using a setter to activate updateDisplay() every time we set a new display number.
     set onDisplay(onDisplay) {
+        //If we encountered NaN or Infinity
+        if(onDisplay !== '-' && !isFinite(onDisplay)) {
+            alert("Calculation Error. Resetting calculator.");
+            this.resetCalc();
+            return;
+        }
         this._onDisplay = onDisplay;
         this.updateDisplay();
     }
@@ -34,10 +43,19 @@ export default class CalcHandler {
         return this._onDisplay;
     }
 
-
     updateDisplay() {
+        //Using == to match nums & strings
+        if (this.displayBarElement.innerHTML == this._onDisplay)
+            this.flashDisplay();
+        else this.displayBarElement.innerHTML = this._onDisplay;
+    }
+
+    //Using sleep to "flash" the number on screen
+    flashDisplay() {
         this.displayBarElement.innerHTML = '';
-        this.displayBarElement.innerHTML = this._onDisplay;
+        sleep(50).then(()=>{
+            this.displayBarElement.innerHTML = this._onDisplay;
+        });
     }
 
     resetCalc() {
@@ -46,6 +64,7 @@ export default class CalcHandler {
         this.operator = null;
         this.newDisplayFlag = true;
         this.firstOperandFlag = true;
+        this.doubleOperatorFlag = false;
     }
 
     actionListener(event) {
@@ -61,6 +80,7 @@ export default class CalcHandler {
             case "=":
                 if (this.firstOperandFlag) {
                     this.accValue = this.onDisplay;
+                    this.updateDisplay();
                 }
                 else {
                     this.accValue = opToFunc[this.operator](this.accValue, this.onDisplay);
@@ -68,6 +88,7 @@ export default class CalcHandler {
                 }
                 this.newDisplayFlag = true;
                 this.firstOperandFlag = true;
+                this.doubleOperatorFlag = false;
         }
     }
 
@@ -80,15 +101,21 @@ export default class CalcHandler {
             this.newDisplayFlag = false;
         }
         else (this.onDisplay === '0' || this.onDisplay === 0) ? this.onDisplay = target.id : this.onDisplay = this.onDisplay + '' + target.id;
+        this.doubleOperatorFlag = false;
     }
 
     opsListener(event) {
         const {target} = event;
         if (!target.matches("button"))
             return;
+        if (this.doubleOperatorFlag){
+            this.updateDisplay();
+            return;
+        }
         if ((this.onDisplay === '0' || this.onDisplay === 0) && target.id === '-') {
             this.onDisplay = '-';
             this.newDisplayFlag = false;
+            this.doubleOperatorFlag = true;
             return;
         }
         if (this.firstOperandFlag)
@@ -100,6 +127,7 @@ export default class CalcHandler {
         this.operator = target.id;
         this.newDisplayFlag = true;
         this.firstOperandFlag = false;
+        this.doubleOperatorFlag = true;
     }
 }
 
