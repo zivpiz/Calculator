@@ -1,0 +1,117 @@
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+    font-family: 'Helvetica', serif;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+Layout
+--------------------------------------------------------------*/
+
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 1em 2em;
+    background-color: #0D1B2E;
+    color: white;
+}
+
+header h1 {
+    text-align: center;
+}
+
+button{
+    font-size: 22px;
+    outline: 0;
+}
+
+#calculator {
+
+    display: inline-block;
+    margin-bottom: 4em;
+    margin-top: 1em;
+    padding: 0;
+    width: 20em;
+    max-width: 20em;
+}
+
+#displayBar {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    background-color: #959595;
+    text-align: right;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding:0 1em;
+}
+
+#calc-buttons{
+    background-color: #D6D6D6;
+}
+
+#actios {
+    margin: 0px;
+}
+
+#actions button {
+    background-color: #D6D6D6;
+    float:left;
+    width: 33.333333333333%;
+    height:3.5em;
+}
+
+#numbers{
+    display: inline-block;
+    /*margin-right:auto;*/
+    margin-left: 0;
+    width:68%;
+}
+
+#numTable {
+
+    height: 10em;
+    width:14em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    float:left;
+}
+
+#numTable td, tr{
+    padding:0;
+    margin:0;
+}
+#numTable button {
+    display: block;
+    width: 100%;
+    height:100%;
+    background-color: #E0E0E0;
+
+}
+
+#ops{
+    display: inline-block;
+    vertical-align: top;
+    float:right;
+    width: 28%;
+
+}
+
+#ops button {
+    display: block;
+    margin:0;
+    height: 2.5em;
+    width:100%;
+    background-color: #F69331;
+    color: white;
+}
