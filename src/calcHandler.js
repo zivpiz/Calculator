@@ -13,18 +13,15 @@ const opToFunc = {
     }
 };
 
-const sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
+const calculate = (num1, num2, operator) =>{
+    return opToFunc[operator](num1, num2);
 };
 
-export default class CalcHandler {
-    constructor() {
-        this.displayBarElement = document.querySelector("#displayBar");
-        this.resetCalc();
 
-        document.querySelector("#actions").addEventListener("click", this.actionListener.bind(this));
-        document.querySelector("#numbers").addEventListener("click", this.numbersListener.bind(this));
-        document.querySelector("#ops").addEventListener("click", this.opsListener.bind(this));
+class CalcHandler {
+    constructor(displayBarElement) {
+        this.displayBarElement = displayBarElement;
+        this.resetCalc();
     }
 
     //Using a setter to activate updateDisplay() every time we set a new display number.
@@ -50,12 +47,11 @@ export default class CalcHandler {
         else this.displayBarElement.innerHTML = this._onDisplay;
     }
 
-    //Using sleep to "flash" the number on screen
+    //Using setTimeout to "flash" the number on screen
     flashDisplay() {
         this.displayBarElement.innerHTML = '';
-        sleep(50).then(()=>{
-            this.displayBarElement.innerHTML = this._onDisplay;
-        });
+        setTimeout(()=> {this.displayBarElement.innerHTML = this._onDisplay;}, 50)
+
     }
 
     resetCalc() {
@@ -67,9 +63,8 @@ export default class CalcHandler {
         this.doubleOperatorFlag = false;
     }
 
-    actionListener(event) {
-        const {target} = event;
-        switch (target.id) {
+    actionListener(action) {
+        switch (action) {
             case "c":
                 this.onDisplay = 0;
                 this.newDisplayFlag = true;
@@ -92,27 +87,21 @@ export default class CalcHandler {
         }
     }
 
-    numbersListener(event) {
-        const {target} = event;
-        if (!target.matches("button"))
-            return;
+    numbersListener(digit) {
         if (this.newDisplayFlag) {
-            this.onDisplay = target.id;
+            this.onDisplay = digit;
             this.newDisplayFlag = false;
         }
-        else (this.onDisplay === '0' || this.onDisplay === 0) ? this.onDisplay = target.id : this.onDisplay = this.onDisplay + '' + target.id;
+        else (this.onDisplay === '0' || this.onDisplay === 0) ? this.onDisplay = digit : this.onDisplay = this.onDisplay + '' + digit;
         this.doubleOperatorFlag = false;
     }
 
-    opsListener(event) {
-        const {target} = event;
-        if (!target.matches("button"))
-            return;
+    opsListener(op) {
         if (this.doubleOperatorFlag){
             this.updateDisplay();
             return;
         }
-        if ((this.onDisplay === '0' || this.onDisplay === 0) && target.id === '-') {
+        if ((this.onDisplay === '0' || this.onDisplay === 0) && op === '-') {
             this.onDisplay = '-';
             this.newDisplayFlag = false;
             this.doubleOperatorFlag = true;
@@ -124,10 +113,12 @@ export default class CalcHandler {
             this.accValue = opToFunc[this.operator](this.accValue, this.onDisplay);
             this.onDisplay = this.accValue;
         }
-        this.operator = target.id;
+        this.operator = op;
         this.newDisplayFlag = true;
         this.firstOperandFlag = false;
         this.doubleOperatorFlag = true;
     }
 }
 
+module.exports.calculate = calculate;
+module.exports.CalcHandler = CalcHandler;

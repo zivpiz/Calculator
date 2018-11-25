@@ -33,7 +33,7 @@ button{
     outline: 0;
 }
 
-#calculator {
+.calculator {
 
     display: inline-block;
     margin-bottom: 4em;
