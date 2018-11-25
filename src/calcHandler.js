@@ -78,7 +78,7 @@ class CalcHandler {
                     this.updateDisplay();
                 }
                 else {
-                    this.accValue = opToFunc[this.operator](this.accValue, this.onDisplay);
+                    this.accValue = calculate(this.accValue, this.onDisplay, this.operator);
                     this.onDisplay = this.accValue;
                 }
                 this.newDisplayFlag = true;
@@ -110,7 +110,7 @@ class CalcHandler {
         if (this.firstOperandFlag)
             this.accValue = this.onDisplay;
         else {
-            this.accValue = opToFunc[this.operator](this.accValue, this.onDisplay);
+            this.accValue = calculate(this.accValue, this.onDisplay, this.operator);
             this.onDisplay = this.accValue;
         }
         this.operator = op;
