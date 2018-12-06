@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for calculatorInitializer.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> calculatorInitializer.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.82% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import CalcHandler from "./calcHandler";<span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span><span class="missing-if-branch" title="else path not taken" >E</span><span class="missing-if-branch" title="else path not taken" >E</span></span>
+&nbsp;
+import {ARITHMETIC_OPS, DIGITS, ALL_ACTIONS} from "./constants";<span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span></span>
+&nbsp;
+&nbsp;
+export default class CalculatorInitializer<span class="fstat-no" title="function not covered" ></span>
+{
+&nbsp;
+     _createActions(calcHandler){
+        const actionsDiv = do<span class="cstat-no" title="statement not covered" >cument.createElement("div");</span>
+        acti<span class="cstat-no" title="statement not covered" >onsDiv.setAttribute("class", "actions");</span>
+        Obje<span class="cstat-no" title="statement not covered" >ct.keys(ALL_ACTIONS).forEach((key) =&gt; {<span class="fstat-no" title="function not covered" ></span></span>
+            const actionButton = do<span class="cstat-no" title="statement not covered" >cument.createElement("button");</span>
+            acti<span class="cstat-no" title="statement not covered" >onButton.appendChild(document.createTextNode(ALL_ACTIONS[key].toUpperCase()));</span>
+            acti<span class="cstat-no" title="statement not covered" >onButton.setAttribute("class", ALL_ACTIONS[key]);</span>
+            acti<span class="cstat-no" title="statement not covered" >onButton.onclick = () =<span class="fstat-no" title="function not covered" >&gt; </span>{</span>
+                calc<span class="cstat-no" title="statement not covered" >Handler.actionListener(ALL_ACTIONS[key])</span>
+            };
+            acti<span class="cstat-no" title="statement not covered" >onsDiv.appendChild(actionButton);</span>
+        });
+&nbsp;
+        retu<span class="cstat-no" title="statement not covered" >rn actionsDiv;</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+&nbsp;
+    _createDigits(calcHandler){
+        const tableElement = do<span class="cstat-no" title="statement not covered" >cument.createElement("table");</span>
+        tabl<span class="cstat-no" title="statement not covered" >eElement.setAttribute("class", "digitTable");</span>
+        tabl<span class="cstat-no" title="statement not covered" >eElement.setAttribute("cellspacing", "0");</span>
+&nbsp;
+        this<span class="cstat-no" title="statement not covered" >._createDigitTable(calcHandler, tableElement);</span>
+&nbsp;
+        const digitsDiv = do<span class="cstat-no" title="statement not covered" >cument.createElement("div");</span>
+        digi<span class="cstat-no" title="statement not covered" >tsDiv.setAttribute("class", "digits");</span>
+        digi<span class="cstat-no" title="statement not covered" >tsDiv.appendChild(tableElement);</span>
+        retu<span class="cstat-no" title="statement not covered" >rn digitsDiv;</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    _createDigitTable(calcHandler, tableElement){
+        for <span class="cstat-no" title="statement not covered" >(let i = 0; i &lt; DIGITS.length; i++) {</span>
+            const rowElement = do<span class="cstat-no" title="statement not covered" >cument.createElement("tr");</span>
+            this<span class="cstat-no" title="statement not covered" >._createDigitTableRow(calcHandler, rowElement, DIGITS[i]);</span>
+            tabl<span class="cstat-no" title="statement not covered" >eElement.appendChild(rowElement);</span>
+        }
+    };
+&nbsp;
+    _createDigitTableRow(calcHandler, rowElement, rowDigitArray){
+        for (let i = 0; i &lt; rowDigitArray.length; i++) {
+            const cell = document.createElement("td");
+            const cellDigit = rowDigitArray[i];
+&nbsp;
+            const cellButton = document.createElement("button");
+            cellButton.setAttribute("class", cellDigit);
+            cellButton.appendChild(document.createTextNode(cellDigit));
+            cellButton.onclick = () =&gt; {
+                calcHandler.digitsListener(cellDigit)
+            };
+            cell.appendChild(cellButton);
+            cell.setAttribute("colspan", 3 / rowDigitArray.length);
+&nbsp;
+            rowElement.appendChild(cell);
+        }
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+&nbsp;
+    _createOps(calcHandler){
+        const opsDiv = do<span class="cstat-no" title="statement not covered" >cument.createElement("div");</span>
+        opsD<span class="cstat-no" title="statement not covered" >iv.setAttribute("class", "ops");</span>
+        this<span class="cstat-no" title="statement not covered" >._appendArithmeticOperations(opsDiv, calcHandler);</span>
+        retu<span class="cstat-no" title="statement not covered" >rn opsDiv</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    _appendArithmeticOperations(allOpsDiv, calcHandler){
+        Obje<span class="cstat-no" title="statement not covered" >ct.keys(ARITHMETIC_OPS).forEach((key) =&gt; {<span class="fstat-no" title="function not covered" ></span></span>
+            const opButton = do<span class="cstat-no" title="statement not covered" >cument.createElement("button");</span>
+            opBu<span class="cstat-no" title="statement not covered" >tton.appendChild(document.createTextNode(ARITHMETIC_OPS[key]));</span>
+            opBu<span class="cstat-no" title="statement not covered" >tton.setAttribute("class", ARITHMETIC_OPS[key]);</span>
+            opBu<span class="cstat-no" title="statement not covered" >tton.onclick = () =<span class="fstat-no" title="function not covered" >&gt; </span>{</span>
+                calc<span class="cstat-no" title="statement not covered" >Handler.opsListener(ARITHMETIC_OPS[key])</span>
+            };
+            allO<span class="cstat-no" title="statement not covered" >psDiv.appendChild(opButton);</span>
+        });
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    _createDisplayAndHandler(calcElement){
+        const displayDiv = do<span class="cstat-no" title="statement not covered" >cument.createElement("div");</span>
+        const calcHandler = ne<span class="cstat-no" title="statement not covered" >w CalcHandler(displayDiv);</span>
+        disp<span class="cstat-no" title="statement not covered" >layDiv.setAttribute("class", "displayBar");</span>
+        calc<span class="cstat-no" title="statement not covered" >Element.appendChild(displayDiv);</span>
+        retu<span class="cstat-no" title="statement not covered" >rn calcHandler;</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    _createButtonsDiv(calcHandler, calcElement){
+        const calcButtonsDiv = do<span class="cstat-no" title="statement not covered" >cument.createElement("div");</span>
+        calc<span class="cstat-no" title="statement not covered" >ButtonsDiv.setAttribute("class", "calc-buttons");</span>
+&nbsp;
+        const actionsDiv = th<span class="cstat-no" title="statement not covered" >is._createActions(calcHandler);</span>
+        const digitsDiv = th<span class="cstat-no" title="statement not covered" >is._createDigits(calcHandler);</span>
+        const opsDiv = th<span class="cstat-no" title="statement not covered" >is._createOps(calcHandler);</span>
+        [act<span class="cstat-no" title="statement not covered" >ionsDiv, digitsDiv, opsDiv].forEach(div <span class="fstat-no" title="function not covered" >=&gt;</span> calcButtonsDiv.appendChild(div));</span>
+        calc<span class="cstat-no" title="statement not covered" >Element.appendChild(calcButtonsDiv);</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    _initializeCalc(calcElement){
+        const calcHandler = th<span class="cstat-no" title="statement not covered" >is._createDisplayAndHandler(calcElement);</span>
+        this<span class="cstat-no" title="statement not covered" >._createButtonsDiv(calcHandler, calcElement);</span>
+    };<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+    initializeCalcs(doc){
+        const allCalcs = do<span class="cstat-no" title="statement not covered" >c.querySelectorAll(".calculator");</span>
+        allC<span class="cstat-no" title="statement not covered" >alcs.forEach((cal<span class="fstat-no" title="function not covered" >cE</span>lement) =&gt; {</span>
+            this<span class="cstat-no" title="statement not covered" >._initializeCalc(calcElement);</span>
+        });
+    };
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 05 2018 17:45:33 GMT+0200 (Israel Standard Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

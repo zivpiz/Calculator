@@ -1,5 +1,4 @@
 import './style.css';
-import initializeCalc from './initializer.js';
+import CalculatorInitializer from './calculatorInitializer.js';
 
-initializeCalc();
-
+new CalculatorInitializer(document);

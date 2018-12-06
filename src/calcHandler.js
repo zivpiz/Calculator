@@ -1,124 +1,126 @@
-const opToFunc = {
-    '+': (x, y) => {
-        return parseFloat(x) + parseFloat(y)
-    },
-    '-': (x, y) => {
-        return parseFloat(x) - parseFloat(y)
-    },
-    '/': (x, y) => {
-        return parseFloat(x) / parseFloat(y)
-    },
-    '*': (x, y) => {
-        return parseFloat(x) * parseFloat(y)
-    }
-};
+const {ALL_ACTIONS, OP_TO_FUNC} = require('./constants');
+import {calculate} from "./staticMethods";
 
-const calculate = (num1, num2, operator) =>{
-    return opToFunc[operator](num1, num2);
-};
+export default class CalcHandler {
 
-
-class CalcHandler {
     constructor(displayBarElement) {
         this.displayBarElement = displayBarElement;
-        this.resetCalc();
-    }
-
-    //Using a setter to activate updateDisplay() every time we set a new display number.
-    set onDisplay(onDisplay) {
-        //If we encountered NaN or Infinity
-        if(onDisplay !== '-' && !isFinite(onDisplay)) {
-            alert("Calculation Error. Resetting calculator.");
-            this.resetCalc();
-            return;
-        }
-        this._onDisplay = onDisplay;
-        this.updateDisplay();
-    }
-
-    get onDisplay() {
-        return this._onDisplay;
-    }
-
-    updateDisplay() {
-        //Using == to match nums & strings
-        if (this.displayBarElement.innerHTML == this._onDisplay)
-            this.flashDisplay();
-        else this.displayBarElement.innerHTML = this._onDisplay;
-    }
-
-    //Using setTimeout to "flash" the number on screen
-    flashDisplay() {
-        this.displayBarElement.innerHTML = '';
-        setTimeout(()=> {this.displayBarElement.innerHTML = this._onDisplay;}, 50)
-
-    }
-
-    resetCalc() {
-        this.accValue = 0;
-        this.onDisplay = 0;
-        this.operator = null;
-        this.newDisplayFlag = true;
-        this.firstOperandFlag = true;
-        this.doubleOperatorFlag = false;
+        this._resetCalc();
     }
 
     actionListener(action) {
         switch (action) {
-            case "c":
-                this.onDisplay = 0;
-                this.newDisplayFlag = true;
+            case ALL_ACTIONS.CLEAR:
+                this._clearAction();
                 break;
-            case "ce":
-                this.resetCalc();
+            case ALL_ACTIONS.CLEAR_ALL:
+                this._resetCalc();
                 break;
-            case "=":
-                if (this.firstOperandFlag) {
-                    this.accValue = this.onDisplay;
-                    this.updateDisplay();
-                }
-                else {
-                    this.accValue = calculate(this.accValue, this.onDisplay, this.operator);
-                    this.onDisplay = this.accValue;
-                }
-                this.newDisplayFlag = true;
-                this.firstOperandFlag = true;
-                this.doubleOperatorFlag = false;
+            case ALL_ACTIONS.EQUALS:
+                this._equalsAction();
+                break;
+            default:
+                throw new Error("Invalid Action.");
         }
     }
 
-    numbersListener(digit) {
-        if (this.newDisplayFlag) {
-            this.onDisplay = digit;
-            this.newDisplayFlag = false;
+    digitsListener(digit) {
+        if (digit < '0' || digit > '9')
+            throw new Error("Invalid Digit.");
+        if (this.showNewDisplay) {
+            this.displayedNow = digit;
+            this.showNewDisplay = false;
         }
-        else (this.onDisplay === '0' || this.onDisplay === 0) ? this.onDisplay = digit : this.onDisplay = this.onDisplay + '' + digit;
-        this.doubleOperatorFlag = false;
+        else if (this.displayedNow === '0' || this.displayedNow === 0)
+            this.displayedNow = digit;
+        else this.displayedNow = this.displayedNow + '' + digit;
+        this.isDoubleOperator = false;
     }
 
     opsListener(op) {
-        if (this.doubleOperatorFlag){
-            this.updateDisplay();
+        if (!OP_TO_FUNC.hasOwnProperty(op))
+            throw new Error("Invalid Operator.");
+        if (this.isDoubleOperator) {
+            this._updateDisplay();
+            this.operator = op;
             return;
         }
-        if ((this.onDisplay === '0' || this.onDisplay === 0) && op === '-') {
-            this.onDisplay = '-';
-            this.newDisplayFlag = false;
-            this.doubleOperatorFlag = true;
+        if (this.showNewDisplay && (this.displayedNow === '0' || this.displayedNow === 0) && op === '-') {
+            this.displayedNow = '-';
+            this.showNewDisplay = false;
+            this.isDoubleOperator = true;
             return;
         }
-        if (this.firstOperandFlag)
-            this.accValue = this.onDisplay;
+        if (this.isFirstOperand) {
+            this.accValue = this.displayedNow;
+            this._updateDisplay();
+        }
         else {
-            this.accValue = calculate(this.accValue, this.onDisplay, this.operator);
-            this.onDisplay = this.accValue;
+            this.accValue = calculate(this.accValue, this.displayedNow, this.operator);
+            this.displayedNow = this.accValue;
         }
         this.operator = op;
-        this.newDisplayFlag = true;
-        this.firstOperandFlag = false;
-        this.doubleOperatorFlag = true;
+        this.showNewDisplay = true;
+        this.isFirstOperand = false;
+        this.isDoubleOperator = true;
+    }
+
+    _resetCalc() {
+        this.accValue = 0;
+        this.displayedNow = 0;
+        this.operator = null;
+        this.showNewDisplay = true;
+        this.isFirstOperand = true;
+        this.isDoubleOperator = false;
+    }
+
+    get displayedNow() {
+        return this._displayedNow;
+    }
+
+    set displayedNow(displayedNow) {
+        if (displayedNow !== '-' && !isFinite(displayedNow)) {
+            alert("Calculation Error. Resetting Calculator.");
+            this._resetCalc();
+            return;
+        }
+        this._displayedNow = (displayedNow === '-') ? displayedNow : +displayedNow;
+        this._updateDisplay();
+    }
+
+    _updateDisplay() {
+        if (this.displayBarElement.innerHTML === this._displayedNow)
+            this._flashDisplay();
+        else this.displayBarElement.innerHTML = this._displayedNow;
+    }
+
+    _flashDisplay() {
+        this.displayBarElement.innerHTML = '';
+        setTimeout(() => {
+            this.displayBarElement.innerHTML = this._displayedNow;
+        }, 50)
+
+    }
+
+
+
+    _clearAction() {
+        this.displayedNow = 0;
+        this.showNewDisplay = true;
+    }
+
+    _equalsAction() {
+        if (this.isFirstOperand) {
+            this.accValue = this.displayedNow;
+            this._updateDisplay();
+        }
+        else {
+            this.accValue = calculate(this.accValue, this.displayedNow, this.operator);
+            this.displayedNow = this.accValue;
+        }
+        this.showNewDisplay = true;
+        this.isFirstOperand = true;
+        this.isDoubleOperator = false;
     }
 }
 
-module.exports.calculate = calculate;
-module.exports.CalcHandler = CalcHandler;
