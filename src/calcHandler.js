@@ -1,4 +1,4 @@
-const {ALL_ACTIONS, OP_TO_FUNC} = require('./constants');
+import {ARITHMETIC_OPS, ALL_ACTIONS} from "./constants";
 import {calculate} from "./staticMethods";
 
 export default class CalcHandler {
@@ -6,6 +6,7 @@ export default class CalcHandler {
     constructor(displayBarElement) {
         this.displayBarElement = displayBarElement;
         this._resetCalc();
+        this._updateDisplay();
     }
 
     actionListener(action) {
@@ -18,109 +19,88 @@ export default class CalcHandler {
                 break;
             case ALL_ACTIONS.EQUALS:
                 this._equalsAction();
+                this.shouldBlockOperators = false;
                 break;
             default:
                 throw new Error("Invalid Action.");
         }
+        this._updateDisplay();
     }
 
     digitsListener(digit) {
         if (digit < '0' || digit > '9')
             throw new Error("Invalid Digit.");
-        if (this.showNewDisplay) {
-            this.displayedNow = digit;
-            this.showNewDisplay = false;
-        }
-        else if (this.displayedNow === '0' || this.displayedNow === 0)
-            this.displayedNow = digit;
-        else this.displayedNow = this.displayedNow + '' + digit;
-        this.isDoubleOperator = false;
-    }
-
-    opsListener(op) {
-        if (!OP_TO_FUNC.hasOwnProperty(op))
-            throw new Error("Invalid Operator.");
-        if (this.isDoubleOperator) {
-            this._updateDisplay();
-            this.operator = op;
-            return;
-        }
-        if (this.showNewDisplay && (this.displayedNow === '0' || this.displayedNow === 0) && op === '-') {
-            this.displayedNow = '-';
-            this.showNewDisplay = false;
-            this.isDoubleOperator = true;
-            return;
-        }
-        if (this.isFirstOperand) {
-            this.accValue = this.displayedNow;
-            this._updateDisplay();
-        }
-        else {
-            this.accValue = calculate(this.accValue, this.displayedNow, this.operator);
-            this.displayedNow = this.accValue;
-        }
-        this.operator = op;
-        this.showNewDisplay = true;
-        this.isFirstOperand = false;
-        this.isDoubleOperator = true;
-    }
-
-    _resetCalc() {
-        this.accValue = 0;
-        this.displayedNow = 0;
-        this.operator = null;
-        this.showNewDisplay = true;
-        this.isFirstOperand = true;
-        this.isDoubleOperator = false;
-    }
-
-    get displayedNow() {
-        return this._displayedNow;
-    }
-
-    set displayedNow(displayedNow) {
-        if (displayedNow !== '-' && !isFinite(displayedNow)) {
-            alert("Calculation Error. Resetting Calculator.");
-            this._resetCalc();
-            return;
-        }
-        this._displayedNow = (displayedNow === '-') ? displayedNow : +displayedNow;
+        if (!this.inputNum)
+            this.inputNum = +digit;
+        else this.inputNum = +(this.inputNum + '' + digit);
+        this.shouldBlockOperators = false;
         this._updateDisplay();
     }
 
-    _updateDisplay() {
-        if (this.displayBarElement.innerHTML === this._displayedNow)
-            this._flashDisplay();
-        else this.displayBarElement.innerHTML = this._displayedNow;
+    opsListener(op) {
+        if (Object.values(ARITHMETIC_OPS).indexOf(op) <= -1)
+            throw new Error("Invalid Operator.");
+        if (this.shouldBlockOperators)
+            this.operator = op;
+        else if (!this.inputNum && op === '-')
+            this._opsNewMinus();
+        else this._opsCalculate(op);
+        this.shouldBlockOperators = true;
+        this._updateDisplay();
     }
 
-    _flashDisplay() {
-        this.displayBarElement.innerHTML = '';
-        setTimeout(() => {
-            this.displayBarElement.innerHTML = this._displayedNow;
-        }, 50)
-
+    _opsNewMinus(){
+        this.inputNum = '-';
+        this.operator = ARITHMETIC_OPS.PLUS;
     }
 
-
-
+    _opsCalculate(op){
+        this._equalsAction();
+        this.operator = op;
+    }
     _clearAction() {
-        this.displayedNow = 0;
-        this.showNewDisplay = true;
+        this.inputNum = null;
     }
 
     _equalsAction() {
-        if (this.isFirstOperand) {
-            this.accValue = this.displayedNow;
-            this._updateDisplay();
+        if (this.operator === null) {
+            this._equalsWithNoOperator();
+            return;
         }
-        else {
-            this.accValue = calculate(this.accValue, this.displayedNow, this.operator);
-            this.displayedNow = this.accValue;
+        if (this.inputNum !== null)
+            this.accValue = calculate(this.accValue, this.inputNum, this.operator);
+        this.inputNum = null;
+        this.operator = null;
+        if (!isFinite(this.accValue)) {
+            alert("Calculation Error. Resetting Calculator.");
+            this._resetCalc();
         }
-        this.showNewDisplay = true;
-        this.isFirstOperand = true;
-        this.isDoubleOperator = false;
+    }
+
+    _equalsWithNoOperator() {
+        if (this.inputNum !== null)
+            this.accValue = this.inputNum;
+        this.inputNum = null;
+        this._updateDisplay();
+    }
+
+    _resetCalc() {
+        this.inputNum = null;
+        this.accValue = 0;
+        this.operator = ARITHMETIC_OPS.PLUS;
+        this.shouldBlockOperators = false;
+    }
+
+    _updateDisplay() {
+        const newDisplay = this.inputNum !== null ? this.inputNum : this.accValue;
+        if (+this.displayBarElement.innerHTML === newDisplay || this.displayBarElement.innerHTML === newDisplay)
+            this._flashDisplay(newDisplay);
+        else this.displayBarElement.innerHTML = newDisplay;
+    }
+
+    _flashDisplay(newDisplay) {
+        this.displayBarElement.innerHTML = '';
+        setTimeout(() => this.displayBarElement.innerHTML = newDisplay, 50);
     }
 }
 

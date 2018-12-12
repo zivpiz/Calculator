@@ -16,7 +16,6 @@ describe("Test createDisplayAndHandler", () => {
 });
 
 describe("Calculation Tests", () => {
-
     describe("Plus", () => {
         test("Plain addition - 5 + 20 = 25", () => {
             expect(calculate(5, 20, '+')).toBe(25);
@@ -74,9 +73,8 @@ describe("Calculation Tests", () => {
 
     describe("Errors", () => {
         test("Some string as operator - throws an error", () => {
-            const calculateString = () => {
+            const calculateString = () =>
                 calculate(10, 2, 'plus');
-            };
             expect(calculateString).toThrow();
         });
     });
