@@ -19,7 +19,6 @@ export default class CalcHandler {
                 break;
             case ALL_ACTIONS.EQUALS:
                 this._equalsAction();
-                this.shouldBlockOperators = false;
                 break;
             default:
                 throw new Error("Invalid Action.");
@@ -33,31 +32,28 @@ export default class CalcHandler {
         if (!this.inputNum)
             this.inputNum = +digit;
         else this.inputNum = +(this.inputNum + '' + digit);
-        this.shouldBlockOperators = false;
         this._updateDisplay();
     }
 
     opsListener(op) {
         if (Object.values(ARITHMETIC_OPS).indexOf(op) <= -1)
             throw new Error("Invalid Operator.");
-        if (this.shouldBlockOperators)
-            this.operator = op;
         else if (!this.inputNum && op === '-')
             this._opsNewMinus();
         else this._opsCalculate(op);
-        this.shouldBlockOperators = true;
         this._updateDisplay();
     }
 
-    _opsNewMinus(){
+    _opsNewMinus() {
         this.inputNum = '-';
         this.operator = ARITHMETIC_OPS.PLUS;
     }
 
-    _opsCalculate(op){
+    _opsCalculate(op) {
         this._equalsAction();
         this.operator = op;
     }
+
     _clearAction() {
         this.inputNum = null;
     }
@@ -88,12 +84,11 @@ export default class CalcHandler {
         this.inputNum = null;
         this.accValue = 0;
         this.operator = ARITHMETIC_OPS.PLUS;
-        this.shouldBlockOperators = false;
     }
 
     _updateDisplay() {
         const newDisplay = this.inputNum !== null ? this.inputNum : this.accValue;
-        if (+this.displayBarElement.innerHTML === newDisplay || this.displayBarElement.innerHTML === newDisplay)
+        if (this.displayBarElement.innerHTML === newDisplay.toString())
             this._flashDisplay(newDisplay);
         else this.displayBarElement.innerHTML = newDisplay;
     }

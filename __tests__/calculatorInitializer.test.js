@@ -102,11 +102,11 @@ describe("Test _appendArithmeticOperations", () => {
         opsLength = Object.keys(ARITHMETIC_OPS).length;
     });
 
-    test("Make sure all buttons are created", () => {
+    test("Make sure all buttons are created & event handlers are set", () => {
         expect(allOpsElem.childNodes.length).toBe(0);
         init._appendArithmeticOperations(allOpsElem, mockHandler);
-        for (let i = 0; i < opsLength; i++)
-            allOpsElem.childNodes[i].click();
+        allOpsElem.childNodes.forEach(opElem => opElem.click());
+
         expect(allOpsElem.childNodes.length).toBe(opsLength);
         expect(mockHandler.opsListener).toHaveBeenCalledTimes(opsLength);
         Object.keys(ARITHMETIC_OPS).forEach(key => {
@@ -151,23 +151,23 @@ describe("Test _createDigitTable", () => {
 });
 
 describe("Test _createDigitTableRow", () => {
-    let mockHandler, rowElem, rowDigitArr;
+    let mockHandler, rowElem, digitRowArr, digitRowLength;
 
     beforeEach(() => {
         mockHandler = {digitsListener: jest.fn()};
         rowElem = document.createElement("div");
-        rowDigitArr = ['1', '2', '3'];
+        digitRowArr = ['1', '2', '3'];
+        digitRowLength = digitRowArr.length;
     });
 
-    test("Make sure a row is created properly", () => {
+    test("Make sure a row is created properly & handlers are set", () => {
         expect(rowElem.childNodes.length).toBe(0);
-        init._createDigitTableRow(mockHandler, rowElem, rowDigitArr);
-        for (let i = 0; i < rowDigitArr.length; i++)
-            rowElem.childNodes[i].childNodes[0].click();
-        expect(rowElem.childNodes.length).toBe(rowDigitArr.length);
-        expect(mockHandler.digitsListener).toHaveBeenCalledTimes(rowDigitArr.length);
-        for (let i = 0; i < rowDigitArr; i++)
-            expect(mockHandler.digitsListener).toHaveBeenCalledWith(rowDigitArr[i]);
+        init._createDigitTableRow(mockHandler, rowElem, digitRowArr);
+        rowElem.childNodes.forEach(digitElem=> digitElem.childNodes[0].click());
+        expect(rowElem.childNodes.length).toBe(digitRowLength);
+        expect(mockHandler.digitsListener).toHaveBeenCalledTimes(digitRowLength);
+        digitRowArr.forEach(digit =>
+        expect(mockHandler.digitsListener).toHaveBeenCalledWith(digit));
     });
 });
 
@@ -180,9 +180,8 @@ describe("Test _createActions", () => {
         actionsLength = Object.keys(ALL_ACTIONS).length;
     });
 
-    test("Make sure all actions are created", () => {
-        for (let i = 0; i < actionsLength; i++)
-            actionsDiv.childNodes[i].click();
+    test("Make sure all actions are created & handlers are set", () => {
+        actionsDiv.childNodes.forEach(action => action.click());
         expect(actionsDiv.childNodes.length).toBe(actionsLength);
         expect(mockHandler.actionListener).toHaveBeenCalledTimes(actionsLength);
         Object.keys(ALL_ACTIONS).forEach(key => {

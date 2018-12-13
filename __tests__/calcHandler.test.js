@@ -11,7 +11,6 @@ describe("Test Action Handler", () => {
         calcHandler.accValue = 3;
         calcHandler.inputNum = 5;
         calcHandler.operator = ARITHMETIC_OPS.MINUS;
-        calcHandler.shouldBlockOperators = true;
     });
 
     test("Test Clear", () => {
@@ -20,23 +19,22 @@ describe("Test Action Handler", () => {
         expect(calcHandler.inputNum).toBe(null);
         expect(calcHandler.accValue).toBe(3);
         expect(calcHandler.operator).toBe(ARITHMETIC_OPS.MINUS);
-        expect(calcHandler.shouldBlockOperators).toBeTruthy();
     });
 
     test("Test Clear All", () => {
         calcHandler.actionListener(ALL_ACTIONS.CLEAR_ALL);
 
         expect(calcHandler.accValue).toBe(0);
+        expect(calcHandler.inputNum).toBe(null);
         expect(calcHandler.operator).toBe(ARITHMETIC_OPS.PLUS);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Test Equals", () => {
         calcHandler.actionListener(ALL_ACTIONS.EQUALS);
 
         expect(calcHandler.inputNum).toBe(null);
+        expect(calcHandler.operator).toBe(null);
         expect(calcHandler.accValue).toBe(-2);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Test Equals when inputNum is null", () => {
@@ -44,8 +42,8 @@ describe("Test Action Handler", () => {
         calcHandler.actionListener(ALL_ACTIONS.EQUALS);
 
         expect(calcHandler.inputNum).toBe(null);
+        expect(calcHandler.operator).toBe(null);
         expect(calcHandler.accValue).toBe(3);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Test Equals with no operator", () => {
@@ -54,7 +52,6 @@ describe("Test Action Handler", () => {
 
         expect(calcHandler.inputNum).toBe(null);
         expect(calcHandler.accValue).toBe(5);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Test Equals with no operator when inputNum is null", () => {
@@ -64,7 +61,6 @@ describe("Test Action Handler", () => {
 
         expect(calcHandler.inputNum).toBe(null);
         expect(calcHandler.accValue).toBe(3);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Test Division by 0 - resets calculator", () => {
@@ -74,7 +70,6 @@ describe("Test Action Handler", () => {
 
         expect(calcHandler.inputNum).toBe(null);
         expect(calcHandler.accValue).toBe(0);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
         expect(calcHandler.operator).toBe(ARITHMETIC_OPS.PLUS);
     });
 
@@ -93,7 +88,6 @@ describe("Test Digits Handler", () => {
         calcHandler.accValue = 2;
         calcHandler.inputNum = 8;
         calcHandler.operator = ARITHMETIC_OPS.PLUS;
-        calcHandler.shouldBlockOperators = true;
     });
 
     test("Normal case, append digit to current num", () => {
@@ -102,7 +96,6 @@ describe("Test Digits Handler", () => {
         expect(displayDiv.innerHTML).toBe("84");
         expect(calcHandler.inputNum).toBe(84);
         expect(calcHandler.accValue).toBe(2);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("current inputNum is null, start a new num", () => {
@@ -111,7 +104,6 @@ describe("Test Digits Handler", () => {
 
         expect(calcHandler.inputNum).toBe(4);
         expect(calcHandler.accValue).toBe(2);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Current display is 0 - replace", () => {
@@ -120,7 +112,6 @@ describe("Test Digits Handler", () => {
 
         expect(calcHandler.inputNum).toBe(1);
         expect(calcHandler.accValue).toBe(2);
-        expect(calcHandler.shouldBlockOperators).toBeFalsy();
     });
 
     test("Invalid digit throws exception - /", () => {
@@ -129,7 +120,7 @@ describe("Test Digits Handler", () => {
         expect(wrongDigit).toThrow();
     });
 
-    test("Invalid digit throws exception - :", () => {
+    test("Invalid digit throws exception - c", () => {
         const wrongDigit = () =>
             calcHandler.digitsListener("c");
         expect(wrongDigit).toThrow();
@@ -144,30 +135,26 @@ describe("Test Ops Handler", () => {
         calcHandler.accValue = 4;
         calcHandler.inputNum = 10;
         calcHandler.operator = ARITHMETIC_OPS.MINUS;
-        calcHandler.shouldBlockOperators = false;
     });
 
-    test("Double operator - update op and return", () => {
-        expect(calcHandler.operator).toBe(ARITHMETIC_OPS.MINUS);
-        calcHandler.shouldBlockOperators = true;
-        calcHandler.opsListener(ARITHMETIC_OPS.PLUS);
-
-        expect(calcHandler.inputNum).toBe(10);
-        expect(calcHandler.operator).toBe(ARITHMETIC_OPS.PLUS);
-        expect(calcHandler.accValue).toBe(4);
-        expect(calcHandler.shouldBlockOperators).toBeTruthy();
-
-    });
-
-    test("inputNum is 0/null and minus - display minus on screen", () => {
+    test("inputNum is 0 and minus - display minus on screen", () => {
         expect(calcHandler.operator).toBe(ARITHMETIC_OPS.MINUS);
         calcHandler.inputNum = 0;
         calcHandler.opsListener(ARITHMETIC_OPS.MINUS);
 
-        expect(displayDiv.innerHTML).toBe("-");
         expect(calcHandler.inputNum).toBe("-");
         expect(calcHandler.accValue).toBe(4);
-        expect(calcHandler.shouldBlockOperators).toBeTruthy();
+        expect(calcHandler.operator).toBe(ARITHMETIC_OPS.PLUS);
+    });
+
+    test("inputNum is null and minus - display minus on screen", () => {
+        expect(calcHandler.operator).toBe(ARITHMETIC_OPS.MINUS);
+        calcHandler.inputNum = null;
+        calcHandler.opsListener(ARITHMETIC_OPS.MINUS);
+
+        expect(calcHandler.inputNum).toBe("-");
+        expect(calcHandler.accValue).toBe(4);
+        expect(calcHandler.operator).toBe(ARITHMETIC_OPS.PLUS);
     });
 
     test("operation - calculate with last operator", () => {
@@ -175,10 +162,8 @@ describe("Test Ops Handler", () => {
         calcHandler.opsListener(ARITHMETIC_OPS.MULT);
 
         expect(calcHandler.operator).toBe(ARITHMETIC_OPS.MULT);
-        expect(displayDiv.innerHTML).toBe("-6");
         expect(calcHandler.accValue).toBe(-6);
         expect(calcHandler.inputNum).toBe(null);
-        expect(calcHandler.shouldBlockOperators).toBeTruthy();
     });
 
     test("Invalid operator throws exception", () => {
@@ -196,7 +181,6 @@ describe("Test Update Display", () => {
         calcHandler.accValue = 4;
         calcHandler.inputNum = 10;
         calcHandler.operator = ARITHMETIC_OPS.MINUS;
-        calcHandler.shouldBlockOperators = false;
     });
 
     test("Input number is null - display accValue", () => {
@@ -214,7 +198,7 @@ describe("Test Update Display", () => {
         expect(displayDiv.innerHTML).toBe("10");
     });
 
-    test("Required number is already on display - refresh and keep it", done => {
+    test("Required number is already on display - refresh and keep it (async)", done => {
         displayDiv.innerHTML = 10;
         calcHandler._updateDisplay();
 

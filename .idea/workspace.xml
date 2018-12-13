@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab28e7d-7691-47d5-8fe2-24670e8da71c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Calc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Calc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__tests__/calcHandler.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/calcHandler.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/staticMethods.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/staticMethods.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/clover.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/coverage-final.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/calcHandler.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/calcHandler.js.html" afterDir="false" />
@@ -17,7 +15,10 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/staticMethods.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/staticMethods.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calcHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculatorInitializer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculatorInitializer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/staticMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/staticMethods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,20 +50,20 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="babelrc" value="2" />
-          <entry key="css" value="7" />
+          <entry key="css" value="8" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="8" />
-          <entry key="js" value="49" />
-          <entry key="json" value="9" />
+          <entry key="js" value="55" />
+          <entry key="json" value="10" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="7" />
+          <entry key="CSS" value="8" />
           <entry key="HTML" value="8" />
-          <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="49" />
+          <entry key="JSON" value="12" />
+          <entry key="JavaScript" value="55" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -74,7 +75,7 @@
           <entry key="CSS" value="1456" />
           <entry key="HTML" value="706" />
           <entry key="JSON" value="164" />
-          <entry key="JavaScript" value="24994" />
+          <entry key="JavaScript" value="25720" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -82,7 +83,7 @@
           <entry key="babelrc" value="20" />
           <entry key="css" value="1456" />
           <entry key="html" value="705" />
-          <entry key="js" value="24995" />
+          <entry key="js" value="25721" />
           <entry key="json" value="144" />
         </counts>
       </usages-collector>
@@ -90,25 +91,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__tests__/calcHandler.test.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+            <state relative-caret-position="272">
+              <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#69#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+        <entry file="file://$PROJECT_DIR$/src/calculatorInitializer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#0#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,53 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/calcHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/staticMethods.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="31" selection-start-column="31" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/calculatorInitializer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-487">
-              <caret line="24" column="88" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-817">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -179,9 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.onDisplay =</find>
-      <find>{</find>
-      <find>let</find>
       <find>onDispl</find>
       <find>opto</find>
       <find>actions</find>
@@ -209,6 +162,9 @@
       <find>(this.inp</find>
       <find>update</find>
       <find>invalid ope</find>
+      <find>actionListener</find>
+      <find>shouldblo</find>
+      <find>init</find>
     </findStrings>
     <replaceStrings>
       <replace>'*'</replace>
@@ -224,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/sum.test.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/src/calcHandler.test.js" />
         <option value="$PROJECT_DIR$/wallaby.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
@@ -232,19 +187,20 @@
         <option value="$PROJECT_DIR$/test/calcHandler.test.js" />
         <option value="$PROJECT_DIR$/test/initializer.test.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/constants.js" />
         <option value="$PROJECT_DIR$/src/initializer.js" />
         <option value="$PROJECT_DIR$/__tests__/initializer.test.js" />
-        <option value="$PROJECT_DIR$/src/calculatorInitializer.js" />
-        <option value="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/staticMethods.js" />
         <option value="$PROJECT_DIR$/__tests__/staticMethods.test.js" />
         <option value="$PROJECT_DIR$/src/newHandler.js" />
         <option value="$PROJECT_DIR$/src/handlerBackup.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/constants.js" />
         <option value="$PROJECT_DIR$/__tests__/calcHandler.test.js" />
+        <option value="$PROJECT_DIR$/src/calculatorInitializer.js" />
         <option value="$PROJECT_DIR$/src/calcHandler.js" />
+        <option value="$PROJECT_DIR$/src/staticMethods.js" />
+        <option value="$PROJECT_DIR$/src/style.css" />
+        <option value="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" />
       </list>
     </option>
   </component>
@@ -332,18 +288,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Jest.Test All">
-    <configuration name="Test Action Handler" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/__tests__/calcHandler.test.js" />
-      <test-names>
-        <test-name value="Test Action Handler" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Test Action Handler.Test Equals with no operator" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -402,6 +346,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" />
+      <test-names>
+        <test-name value="Test constructor" />
+        <test-name value="Make sure initializeCalc is called for each .calculator" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="calc" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:8080/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
@@ -415,19 +372,19 @@
       <item itemvalue="JavaScript Debug.calc" />
       <item itemvalue="Jest.Test All" />
       <item itemvalue="Node.js.wallaby.js" />
-      <item itemvalue="Jest.Test Action Handler" />
       <item itemvalue="Jest.Test Digits Handler" />
       <item itemvalue="Jest.Test Ops Handler" />
       <item itemvalue="Jest.Test Action Handler.Test Equals with no operator" />
       <item itemvalue="Jest.Test Update Display.Input number is null - display accValue" />
+      <item itemvalue="Jest.Test constructor.Make sure initializeCalc is called for each .calculator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test constructor.Make sure initializeCalc is called for each .calculator" />
         <item itemvalue="Jest.Test Update Display.Input number is null - display accValue" />
         <item itemvalue="Jest.Test Action Handler.Test Equals with no operator" />
         <item itemvalue="Jest.Test Ops Handler" />
         <item itemvalue="Jest.Test Digits Handler" />
-        <item itemvalue="Jest.Test Action Handler" />
       </list>
     </recent_temporary>
   </component>
@@ -443,44 +400,44 @@
       <updated>1542291857819</updated>
       <workItem from="1542291858986" duration="61057000" />
       <workItem from="1543392653060" duration="21030000" />
-      <workItem from="1543486838917" duration="94242000" />
+      <workItem from="1543486838917" duration="103634000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_All - 2018.12.12 at 10h 56m 31s.xml">
+    <history-entry file="Test_All - 2018.12.13 at 10h 24m 04s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 10h 57m 11s.xml">
+    <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 25m 39s.xml">
+      <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 26m 05s.xml">
+      <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 26m 59s.xml">
+      <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 29m 09s.xml">
+      <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 29m 40s.xml">
+      <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Test_All - 2018.12.13 at 11h 22m 16s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 19m 56s.xml">
+    <history-entry file="Test_All - 2018.12.13 at 11h 26m 51s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_Action_Handler_Test_Equals_with_no_operator - 2018.12.12 at 11h 26m 55s.xml">
-      <configuration name="Test Action Handler.Test Equals with no operator" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 27m 41s.xml">
+    <history-entry file="Test_All - 2018.12.13 at 11h 29m 41s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_Update_Display_Input_number_is_null_-_display_accValue - 2018.12.12 at 11h 32m 08s.xml">
-      <configuration name="Test Update Display.Input number is null - display accValue" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 36m 53s.xml">
-      <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 37m 23s.xml">
-      <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 39m 13s.xml">
-      <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test_All - 2018.12.12 at 11h 40m 31s.xml">
+    <history-entry file="Test_All - 2018.12.13 at 11h 31m 01s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176329000" />
+    <option name="totallyTimeSpent" value="185721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -492,10 +449,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18796591" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25250357" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4986835" weight="0.2626728" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5013165" side_tool="true" weight="0.2451613" />
@@ -503,7 +461,7 @@
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4997367" weight="0.3281106" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4986835" visible="true" weight="0.24423963" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4986835" visible="true" weight="0.3375796" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -591,16 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/browserMock.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -622,33 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/calculatorInitializer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487">
-          <caret line="24" column="88" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newHandler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -656,23 +577,6 @@
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/staticMethods.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -686,42 +590,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/browserMock.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/staticMethods.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="565">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/calcHandler.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+        <state relative-caret-position="157">
+          <caret line="181" column="34" selection-start-line="181" selection-start-column="34" selection-end-line="181" selection-end-column="34" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/staticMethods.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/calcHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="225">
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/staticMethods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-817">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/calculatorInitializer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
           </folding>
         </state>
       </provider>

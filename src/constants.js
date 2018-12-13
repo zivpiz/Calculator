@@ -19,3 +19,4 @@ export const OP_TO_FUNC = {
     [ARITHMETIC_OPS.MULT]: (x, y) => x * y
 };
 
+export const TABLE_WIDTH = 3;

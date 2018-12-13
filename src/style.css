@@ -28,7 +28,7 @@ header h1 {
     text-align: center;
 }
 
-button{
+button {
     font-size: 22px;
     outline: 0;
 }
@@ -45,8 +45,8 @@ button{
 
 .displayBar {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
     background-color: #959595;
     text-align: right;
     color: white;
@@ -54,11 +54,11 @@ button{
     width: 100%;
     height: 1.5em;
     margin: 0;
-    padding:0 1em;
+    padding: 0 1em;
     float: right;
 }
 
-.calc-buttons{
+.calc-buttons {
     background-color: #D6D6D6;
 }
 
@@ -68,52 +68,53 @@ button{
 
 .actions button {
     background-color: #D6D6D6;
-    float:left;
+    float: left;
     width: 33.333333333333%;
-    height:3.5em;
+    height: 3.5em;
 }
 
-.digits{
+.digits {
     display: inline-block;
     /*margin-right:auto;*/
     margin-left: 0;
-    width:68%;
+    width: 68%;
 }
 
 .digitTable {
 
     height: 10em;
-    width:14em;
+    width: 14em;
     border-collapse: collapse;
     border-spacing: 0;
-    float:left;
+    float: left;
 }
 
-.digitTable td, tr{
-    padding:0;
-    margin:0;
+.digitTable td, tr {
+    padding: 0;
+    margin: 0;
 }
+
 .digitTable button {
     display: block;
     width: 100%;
-    height:100%;
+    height: 100%;
     background-color: #E0E0E0;
 
 }
 
-.ops{
+.ops {
     display: inline-block;
     vertical-align: top;
-    float:right;
+    float: right;
     width: 28%;
 
 }
 
 .ops button {
     display: block;
-    margin:0;
+    margin: 0;
     height: 2.5em;
-    width:100%;
+    width: 100%;
     background-color: #F69331;
     color: white;
 }

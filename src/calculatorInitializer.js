@@ -1,4 +1,4 @@
-import {ARITHMETIC_OPS, DIGITS, ALL_ACTIONS} from "./constants";
+import {ARITHMETIC_OPS, DIGITS, ALL_ACTIONS, TABLE_WIDTH} from "./constants";
 import {createDisplayAndHandler} from "./staticMethods";
 
 export default class CalculatorInitializer {
@@ -33,9 +33,7 @@ export default class CalculatorInitializer {
             const actionButton = document.createElement("button");
             actionButton.appendChild(document.createTextNode(ALL_ACTIONS[key].toUpperCase()));
             actionButton.setAttribute("class", ALL_ACTIONS[key]);
-            actionButton.onclick = () => {
-                calcHandler.actionListener(ALL_ACTIONS[key])
-            };
+            actionButton.onclick = () => calcHandler.actionListener(ALL_ACTIONS[key]);
             actionsDiv.appendChild(actionButton);
         });
 
@@ -56,29 +54,26 @@ export default class CalculatorInitializer {
     };
 
     _createDigitTable(calcHandler, tableElement) {
-        for (let i = 0; i < DIGITS.length; i++) {
+        DIGITS.forEach(digitRowArray => {
             const rowElement = document.createElement("tr");
-            this._createDigitTableRow(calcHandler, rowElement, DIGITS[i]);
+            this._createDigitTableRow(calcHandler, rowElement, digitRowArray);
             tableElement.appendChild(rowElement);
-        }
+        });
     };
 
-    _createDigitTableRow(calcHandler, rowElement, rowDigitArray) {
-        for (let i = 0; i < rowDigitArray.length; i++) {
+    _createDigitTableRow(calcHandler, rowElement, digitRowArray) {
+        digitRowArray.forEach(digit => {
             const cell = document.createElement("td");
-            const cellDigit = rowDigitArray[i];
-
+            const cellDigit = digit;
             const cellButton = document.createElement("button");
             cellButton.setAttribute("class", cellDigit);
             cellButton.appendChild(document.createTextNode(cellDigit));
-            cellButton.onclick = () => {
-                calcHandler.digitsListener(cellDigit)
-            };
+            cellButton.onclick = () => calcHandler.digitsListener(cellDigit);
             cell.appendChild(cellButton);
-            cell.setAttribute("colspan", 3 / rowDigitArray.length);
+            cell.setAttribute("colspan", TABLE_WIDTH / digitRowArray.length);
 
             rowElement.appendChild(cell);
-        }
+        });
     };
 
     _createOps(calcHandler) {
@@ -93,9 +88,7 @@ export default class CalculatorInitializer {
             const opButton = document.createElement("button");
             opButton.appendChild(document.createTextNode(ARITHMETIC_OPS[key]));
             opButton.setAttribute("class", ARITHMETIC_OPS[key]);
-            opButton.onclick = () => {
-                calcHandler.opsListener(ARITHMETIC_OPS[key])
-            };
+            opButton.onclick = () => calcHandler.opsListener(ARITHMETIC_OPS[key]);
             allOpsDiv.appendChild(opButton);
         });
     };
