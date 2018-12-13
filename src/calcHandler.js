@@ -31,7 +31,7 @@ export default class CalcHandler {
             throw new Error("Invalid Digit.");
         if (!this.inputNum)
             this.inputNum = +digit;
-        else this.inputNum = +(this.inputNum + '' + digit);
+        else this.inputNum = +(`${this.inputNum}${digit}`);
         this._updateDisplay();
     }
 

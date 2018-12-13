@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab28e7d-7691-47d5-8fe2-24670e8da71c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/calcHandler.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/calcHandler.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/clover.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/coverage-final.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/calcHandler.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/calcHandler.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/calculatorInitializer.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/calculatorInitializer.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/constants.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/constants.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/staticMethods.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/staticMethods.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calcHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculatorInitializer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculatorInitializer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/staticMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/staticMethods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,7 +37,7 @@
           <entry key="css" value="8" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="8" />
-          <entry key="js" value="55" />
+          <entry key="js" value="56" />
           <entry key="json" value="10" />
           <entry key="xml" value="1" />
         </counts>
@@ -63,7 +47,7 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="8" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="55" />
+          <entry key="JavaScript" value="56" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -75,7 +59,7 @@
           <entry key="CSS" value="1456" />
           <entry key="HTML" value="706" />
           <entry key="JSON" value="164" />
-          <entry key="JavaScript" value="25720" />
+          <entry key="JavaScript" value="25748" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -83,7 +67,7 @@
           <entry key="babelrc" value="20" />
           <entry key="css" value="1456" />
           <entry key="html" value="705" />
-          <entry key="js" value="25721" />
+          <entry key="js" value="25749" />
           <entry key="json" value="144" />
         </counts>
       </usages-collector>
@@ -91,11 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
+            <state relative-caret-position="84">
+              <caret line="149" column="42" lean-forward="true" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -120,6 +104,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-817">
               <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/calcHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/constants.js" />
         <option value="$PROJECT_DIR$/__tests__/calcHandler.test.js" />
         <option value="$PROJECT_DIR$/src/calculatorInitializer.js" />
-        <option value="$PROJECT_DIR$/src/calcHandler.js" />
         <option value="$PROJECT_DIR$/src/staticMethods.js" />
         <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/__tests__/calculatorInitializer.test.js" />
+        <option value="$PROJECT_DIR$/src/calcHandler.js" />
       </list>
     </option>
   </component>
@@ -400,14 +396,11 @@
       <updated>1542291857819</updated>
       <workItem from="1542291858986" duration="61057000" />
       <workItem from="1543392653060" duration="21030000" />
-      <workItem from="1543486838917" duration="103634000" />
+      <workItem from="1543486838917" duration="105241000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_All - 2018.12.13 at 10h 24m 04s.xml">
-      <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="Test_constructor_Make_sure_initializeCalc_is_called_for_each__calculator - 2018.12.13 at 10h 25m 39s.xml">
       <configuration name="Test constructor.Make sure initializeCalc is called for each .calculator" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -435,9 +428,12 @@
     <history-entry file="Test_All - 2018.12.13 at 11h 31m 01s.xml">
       <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Test_All - 2018.12.13 at 11h 33m 16s.xml">
+      <configuration name="Test All" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185721000" />
+    <option name="totallyTimeSpent" value="187328000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,19 +445,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25250357" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18796591" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4986835" weight="0.2626728" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4986835" visible="true" weight="0.18986174" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5013165" side_tool="true" weight="0.2451613" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4997367" weight="0.3281106" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4986835" visible="true" weight="0.3375796" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4986835" weight="0.3375796" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -630,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/calcHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -664,6 +650,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="149" column="42" lean-forward="true" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/calculatorInitializer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -674,12 +670,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/calculatorInitializer.test.js">
+    <entry file="file://$PROJECT_DIR$/src/calcHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
+        <state relative-caret-position="507">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <element signature="e#0#69#0" expanded="true" />
+            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
